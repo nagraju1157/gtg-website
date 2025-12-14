@@ -1,0 +1,1048 @@
+:root {
+    /*-----------------------------------
+      Color Variables
+    -----------------------------------*/
+    --primary: #032E15;
+    --secondary: #162456;
+    --white: #ffffff;
+    --black: #000000;
+    --text-grey: #919798;
+    --text-dark-grey: #6F7577;
+    --border-color: #CDCDCD;
+    --background: #032E15;
+    --gradient: linear-gradient(0deg, rgba(1, 102, 48, 1) 0%, rgba(3, 46, 21, 1) 100%);
+    /* Font Family */
+    --font-family: "Inter", Arial, Helvetica, sans-serif;
+
+    /* Clamp Font Weights */
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semi-bold: 600;
+    --weight-bold: 700;
+    --weight-extra-bold: 800;
+    --weight-black: 900;
+
+    /*-----------------------------------
+      Clamp Font Sizes
+    -----------------------------------*/
+    --clamp12: clamp(10px, 0.625vw, 12px);
+    --clamp13: clamp(10px, 0.677vw, 13px);
+    --clamp14: clamp(12px, 0.72916vw, 14px);
+    --clamp15: clamp(13px, 0.78125vw, 15px);
+    --clamp16: clamp(14px, 0.8333vw, 16px);
+    --clamp18: clamp(14px, 0.9375vw, 18px);
+    --clamp20: clamp(16px, 1.0416vw, 20px);
+    --clamp21: clamp(16px, 1.0937vw, 21px);
+    --clamp22: clamp(16px, 1.145vw, 22px);
+    --clamp24: clamp(16px, 1.25vw, 24px);
+    --clamp26: clamp(18px, 1.3541vw, 26px);
+    --clamp27: clamp(18px, 1.40625vw, 27px);
+    --clamp28: clamp(18px, 1.4583vw, 28px);
+    --clamp30: clamp(20px, 1.5625vw, 30px);
+    --clamp32: clamp(20px, 1.666vw, 32px);
+    --clamp34: clamp(20px, 1.770vw, 34px);
+    --clamp35: clamp(20px, 1.8229vw, 35px);
+    --clamp36: clamp(22px, 1.875vw, 36px);
+    --clamp38: clamp(22px, 1.9791vw, 38px);
+    --clamp40: clamp(24px, 2.1875vw, 40px);
+    --clamp42: clamp(24px, 2.1875vw, 42px);
+    --clamp44: clamp(24px, 2.291vw, 44px);
+    --clamp45: clamp(26px, 2.3vw, 45px);
+    --clamp46: clamp(26px, 2.3vw, 46px);
+    --clamp48: clamp(28px, 2.5vw, 48px);
+    --clamp50: clamp(28px, 2.6041vw, 50px);
+    --clamp52: clamp(28px, 2.7083vw, 52px);
+    --clamp54: clamp(28px, 2.8125vw, 54px);
+    --clamp55: clamp(28px, 2.8645vw, 55px);
+    --clamp56: clamp(28px, 2.9166vw, 56px);
+    --clamp58: clamp(28px, 3.02083vw, 58px);
+    --clamp60: clamp(30px, 3.125vw, 60px);
+    --clamp62: clamp(30px, 3.2291vw, 62px);
+    --clamp64: clamp(30px, 3.333vw, 64px);
+    --clamp65: clamp(30px, 3.3854vw, 65px);
+    --clamp66: clamp(32px, 3.4375vw, 66px);
+    --clamp68: clamp(32px, 3.541vw, 68px);
+    --clamp70: clamp(32px, 3.645vw, 70px);
+    --clamp72: clamp(35px, 3.72vw, 72px);
+    --clamp74: clamp(35px, 3.854vw, 74px);
+    --clamp75: clamp(35px, 3.90625vw, 75px);
+    --clamp76: clamp(35px, 3.958vw, 75px);
+    --clamp78: clamp(35px, 4.0625vw, 78px);
+    --clamp80: clamp(35px, 4.1666vw, 80px);
+    --clamp82: clamp(35px, 4.27083vw, 82px);
+    --clamp84: clamp(38px, 4.375vw, 84px);
+    --clamp100: clamp(38px, 5.2083vw, 100px);
+    --clamp120: clamp(40px, 6.25vw, 120px);
+}
+
+/* Default styles */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    overflow-x: hidden;
+    width: 100%;
+    height: auto;
+    position: relative;
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* theme-button start */
+.theme-button {
+    font-size: var(--clamp18);
+    font-weight: var(--weight-medium);
+    color: var(--white);
+    background: var(--gradient);
+    padding: 13px 20px;
+    width: 145px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 999px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.theme-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transition: left 0.6s ease;
+}
+
+.theme-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(3, 102, 48, 0.35);
+}
+
+.theme-button:hover::before {
+    left: 120%;
+}
+
+.theme-button:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 18px rgba(3, 102, 48, 0.25);
+}
+
+/* theme-button end */
+/* header start */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+header.is-sticky {
+    position: fixed;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header.is-sticky .navbar {
+    padding: 12px 0;
+}
+
+header .custom-dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+header .dropdown-menu {
+    margin-top: 8px;
+}
+
+header .custom-dropdown .arrow {
+    font-size: 10px;
+    margin-left: 4px;
+    transition: transform 0.3s ease;
+}
+
+/* Arrow rotate on hover */
+header .custom-dropdown:hover .arrow {
+    transform: rotate(180deg);
+}
+
+/* Optional smooth animation */
+header .dropdown-menu {
+    animation: fadeDown 0.3s ease;
+}
+
+header nav .navbar-brand {
+    font-size: var(--clamp30);
+    color: var(--gradient);
+    font-weight: var(--weight-extra-bold);
+}
+
+header nav .btn {
+    font-size: var(--clamp18);
+    font-weight: var(--weight-medium);
+    color: var(--white);
+    background: var(--gradient);
+    padding: 13px 20px;
+    width: 145px;
+}
+
+header nav .nav-item .nav-link {
+    font-size: var(--clamp18);
+    font-weight: var(--weight-regular);
+    color: #162456 !important;
+    margin: 0 10px;
+}
+
+header nav .nav-item .nav-link:hover,
+header nav .nav-item .nav-link.active {
+    color: var(--primary) !important;
+}
+
+header .navbar-toggler {
+    border: none;
+}
+
+header .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+@media (max-width: 991px) {
+    header .navbar-nav {
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    header .d-flex {
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+
+/* header end */
+/* GTG banner start */
+.gtg-banner {
+    background-image: url('../images/hero-banner.png');
+    background-size: cover;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    padding: 180px 0 300px;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.gtg-banner .container {
+    position: relative;
+    z-index: 2;
+}
+
+.gtg-banner .badge-banner {
+    display: inline-block;
+    background: linear-gradient(0deg, rgb(1 102 48 / 50%), rgb(3 46 21 / 50%));
+    color: #ffffff;
+    padding: 7px 37px;
+    border-radius: 20px;
+    font-size: var(--clamp16);
+    font-weight: var(--weight-light);
+    margin-bottom: 20px;
+    border: 0.5px solid transparent;
+}
+
+.gtg-banner h1 {
+    font-size: var(--clamp56);
+    font-weight: var(--weight-bold);
+    color: var(--primary);
+    margin-bottom: 30px;
+}
+
+.gtg-banner .banner-stats {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 30px;
+}
+
+.gtg-banner .banner-stats h2 {
+    font-size: var(--clamp72);
+    font-weight: var(--weight-bold);
+    background: linear-gradient(0deg, rgb(1 102 48 / 70%), rgb(3 46 21 / 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0;
+}
+
+.gtg-banner .banner-stats p {
+    font-size: var(--clamp22);
+    font-weight: var(--weight-light);
+    color: #0D542B;
+}
+
+@media (max-width: 991.98px) {
+    .gtg-banner {
+        padding: 150px 0 100px;
+        background-position: 100%;
+    }
+
+    .navbar-collapse {
+        background-color: var(--white);
+    }
+}
+
+@media (max-width: 576px) {
+    .gtg-banner {
+        text-align: center;
+        z-index: 1;
+    }
+
+    .gtg-banner::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgb(183 214 231 / 50%);
+        z-index: -1;
+    }
+
+    .GTG-Perfumes .included-box {
+        flex-direction: column;
+    }
+
+    .GTG-Perfumes .included-box .list:first-child {
+        width: 100% !important;
+    }
+
+    .GTG-Perfumes .one_time {
+        gap: 20px !important;
+        margin: 0 10px 0 !important;
+    }
+
+    .gtg-banner .banner-stats {
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+
+    .gtg-banner .banner-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .GTG-Perfumes .gtg-accordion .accordion-button {
+        padding: 10px 10px;
+    }
+
+    .GTG-Perfumes .gtg-accordion .accordion-item .accordion-body {
+        padding: 20px 30px 0 !important;
+    }
+
+    .GTG-Perfumes .gtg-accordion .accordion-item .accordion-body::after {
+        left: 30px !important;
+        right: 30px !important;
+    }
+}
+
+/* .gtg banner end */
+/* GtG perfumes start*/
+.GTG-Perfumes .h2 {
+    font-size: var(--clamp36);
+    font-weight: var(--weight-semi-bold);
+    color: var(--primary);
+}
+
+.GTG-Perfumes .rating {
+    color: #00C950;
+    font-size: var(--clamp13);
+    font-weight: var(--weight-light);
+}
+
+.GTG-Perfumes .rating small {
+    color: var(--primary);
+    font-size: var(--clamp13);
+    font-weight: var(--weight-light);
+    margin-left: 6px;
+}
+
+.GTG-Perfumes .GTG-Perfumes .txt {
+    color: var(--primary);
+    font-size: var(--clamp16);
+    font-weight: var(--weight-light);
+}
+
+.GTG-Perfumes .most_poplular_badge {
+    display: inline-block;
+    background: linear-gradient(90deg, rgba(0, 201, 80, 1) 0%, rgba(0, 130, 54, 1) 50%, rgba(3, 46, 21, 1) 100%);
+    color: var(--white);
+    padding: 10px 20px;
+    font-size: var(--clamp20);
+    font-weight: var(--weight-bold);
+    margin: 10px 0 0;
+    width: 100%;
+    text-align: center;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.GTG-Perfumes .accordion-button::after {
+    display: none;
+}
+
+.GTG-Perfumes .accordion-item:first-child {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.GTG-Perfumes .gtg-accordion .accordion-item {
+    border: 1px solid #B8B8B8;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.GTG-Perfumes .gtg-accordion .accordion-item .accordion-body {
+    padding: 20px 40px 0;
+    position: relative;
+}
+
+.GTG-Perfumes .gtg-accordion .accordion-item .accordion-body::after {
+    content: "";
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    top: 0;
+    border-bottom: 1px solid #919798;
+}
+
+.GTG-Perfumes .gtg-accordion .accordion-button:hover {
+    z-index: 0;
+}
+
+.GTG-Perfumes .gtg-accordion .accordion-item .accordion-header .accordion-button.collapsed::after {
+    opacity: 0;
+}
+
+.GTG-Perfumes .included,
+.GTG-Perfumes .fragrance {
+    font-size: var(--clamp16);
+    font-weight: var(--weight-light);
+    color: var(--primary);
+}
+
+.GTG-Perfumes .fragrance-card {
+    background-color: #F9F9F9;
+    width: 127px;
+    padding: 10px;
+    height: 145px;
+}
+
+.GTG-Perfumes .fragrance-card img {
+    width: 55px;
+    height: 95px;
+    margin-top: 5px;
+}
+
+.GTG-Perfumes .GTG-Perfumes.fragrance-card input {
+    width: 10px;
+    height: 10px;
+    border: 0.89px solid #919798;
+}
+
+.GTG-Perfumes .fragrance-card span {
+    font-size: var(--clamp13);
+    font-weight: var(--weight-light);
+    color: #919798;
+}
+
+.GTG-Perfumes .gtg-accordion .accordion-button {
+    background: #fff;
+    font-size: var(--clamp20);
+    font-weight: var(--weight-light);
+    letter-spacing: 0.9px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.GTG-Perfumes .gtg-accordion .accordion-button:not(.collapsed) {
+    box-shadow: none;
+}
+
+.GTG-Perfumes .radio-dot {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #2e7d32;
+    border-radius: 50%;
+}
+
+.GTG-Perfumes .radio-dot.active {
+    background: #2e7d32;
+}
+
+.GTG-Perfumes .price del {
+    color: #aaa;
+    font-size: var(--clamp14);
+}
+
+.GTG-Perfumes .fragrance-options {
+    display: flex;
+    gap: 15px;
+}
+
+.GTG-Perfumes .included-box {
+    display: flex;
+    gap: 15px;
+}
+
+.GTG-Perfumes .included-box .list {
+    border: 1px solid #919798;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.GTG-Perfumes .included-box .list small {
+    font-size: var(--clamp16);
+    font-weight: var(--weight-light);
+    color: #6F7577;
+}
+
+.GTG-Perfumes .included-box .list:first-child {
+    width: 166px;
+}
+
+.GTG-Perfumes .included-box .list:last-child img {
+    width: 55px;
+    height: 95px;
+}
+
+.GTG-Perfumes .one_time {
+    gap: 40px;
+    display: flex;
+    margin: 0 30px 0;
+}
+
+.GTG-Perfumes .benefits {
+    list-style: none;
+    padding: 0;
+}
+
+.GTG-Perfumes .benefits li {
+    font-size: var(--clamp14);
+    margin-bottom: 6px;
+    font-weight: var(--weight-light);
+    letter-spacing: 0.9px;
+    color: var(--primary);
+}
+
+.GTG-Perfumes .best_seller_badge {
+    position: absolute;
+    top: -6px;
+    right: 3px;
+    background: var(--primary);
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 7px;
+    font-weight: var(--weight-bold);
+    padding: 1px 7px;
+    border-top-left-radius: 4.95px;
+    border-bottom-right-radius: 4.95px;
+}
+
+.GTG-Perfumes .product-slider {
+    margin: auto;
+}
+
+.GTG-Perfumes .carousel-inner {
+    border-radius: 20px;
+    background: #ebeae7;
+    height: 672px;
+}
+
+.GTG-Perfumes .carousel-indicators [data-bs-target] {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    border: 1px solid var(--primary);
+    background-color: unset;
+}
+
+.GTG-Perfumes .carousel-indicators [data-bs-target].active {
+    background-color: var(--primary);
+}
+
+.GTG-Perfumes .carousel-inner .carousel-item img {
+    height: 673px;
+    object-fit: cover;
+}
+
+.GTG-Perfumes .carousel-control-prev,
+.GTG-Perfumes .carousel-control-next {
+    top: auto;
+    bottom: 0px;
+    transform: translateY(-50%);
+}
+
+.GTG-Perfumes .thumb-wrapper {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.GTG-Perfumes .thumb {
+    width: 72px;
+    height: 72px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.6;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.GTG-Perfumes .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.GTG-Perfumes .thumb.active {
+    opacity: 1;
+    border-color: #0f5132;
+}
+
+@media (max-width: 576px) {
+    .GTG-Perfumes .thumb {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+/* GTG perfumes end */
+/* GTG perfumes counter start */
+.GTG-perfumes-counter {
+    background: var(--gradient);
+}
+
+.GTG-perfumes-counter .counter-box {
+    transition: transform 0.3s ease;
+}
+
+.GTG-perfumes-counter .counter-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(201, 160, 53, 0.3);
+}
+
+.GTG-perfumes-counter .counter-number {
+    font-weight: var(--weight-bold);
+    font-size: var(--clamp40);
+    color: var(--white);
+}
+
+.GTG-perfumes-counter .counter-label {
+    font-weight: var(--weight-light);
+    font-size: var(--clamp16);
+    color: var(--white);
+    margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+    .GTG-perfumes-counter .counter-number {
+        font-size: var(--clamp30, 1.8rem);
+    }
+}
+
+/* faqs start */
+.GTG-our-collection {
+    font-family: var(--font-primary);
+    color: var(--text-dark);
+}
+
+.GTG-our-collection .section-title {
+    font-size: var(--clamp36);
+    font-weight: var(--weight-semi-bold);
+    color: var(--primary);
+}
+
+.GTG-our-collection .accordion-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.GTG-our-collection .accordion-body {
+    font-size: var(--clamp20);
+    font-weight: var(--weight-light);
+    padding: 23px 32px;
+}
+
+.GTG-our-collection .accordion-button:not(.collapsed) {
+    box-shadow: none;
+    background-color: unset;
+}
+
+.GTG-our-collection .accordion-button:focus {
+    box-shadow: none;
+}
+
+.GTG-our-collection .accordion-button {
+    font-size: var(--clamp20);
+    line-height: 30px;
+    font-weight: var(--weight-bold);
+    color: var(--primary);
+    padding: 21px 32px;
+    background: unset;
+}
+
+.GTG-our-collection .accordion-button::after {
+    background-image: none !important;
+    transform: none !important;
+}
+
+.GTG-our-collection .accordion-button::after {
+    content: "+";
+    font-size: var(--clamp24);
+    font-weight: var(--weight-bold);
+    color: var(--primary);
+    width: auto;
+    height: auto;
+    margin-left: auto;
+}
+
+.GTG-our-collection .accordion-button:not(.collapsed)::after {
+    content: "−";
+}
+
+@media (max-width: 991.98px) {
+    .gtg-compare .gtg-compare-sec {
+        width: 100% !important;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .gtg-compare .compare-table th:first-child,
+    .gtg-compare .compare-table td:first-child {
+        position: sticky;
+        left: 0;
+        background: #fff;
+        z-index: 2;
+    }
+
+    .gtg-compare .compare-table th:first-child {
+        z-index: 3;
+    }
+
+    .theme-button {
+        padding: 9px 20px !important;
+        width: auto !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .gtg-compare .table-responsive::after {
+        content: "← Swipe to compare →";
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        color: var(--primary);
+        padding-top: 8px;
+    }
+}
+
+/* faqs end */
+/* GTG compare */
+.gtg-compare {
+    background: #ffffff;
+    font-family: "Inter", sans-serif;
+}
+
+.gtg-compare h2 {
+    font-size: var(--clamp36);
+    font-weight: var(--weight-semi-bold);
+    color: var(--primary);
+}
+
+.gtg-compare .gtg-compare-sec {
+    width: 950px;
+    margin: 0 auto;
+}
+
+.gtg-compare .compare-dots {
+    letter-spacing: 0px;
+    color: var(--primary);
+    font-weight: var(--weight-light);
+    font-size: var(--clamp40);
+}
+
+.gtg-compare .compare-table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.gtg-compare .compare-table th,
+.gtg-compare .compare-table td {
+    padding: 13px 18px !important;
+}
+
+.gtg-compare .compare-table tbody td {
+    border-bottom: 1px solid #666666;
+    font-size: var(--clamp16);
+    font-weight: var(--weight-light);
+    color: #666666 !important;
+}
+
+.gtg-compare .compare-table th {
+    border-bottom: 1px solid #666666;
+}
+
+.gtg-compare .compare-table tbody td:first-child {
+    text-align: left;
+}
+
+.gtg-compare .compare-table th.gtg-col,
+.gtg-compare .compare-table td.gtg-col {
+    background: #F0FDF4;
+}
+
+.gtg-compare .compare-table td.gtg-col,
+.gtg-compare .compare-table th.gtg-col {
+    border-bottom: 1px dotted #322D2D;
+}
+
+.gtg-compare .compare-table th.gtg-col {
+    border-radius: 16px 16px 0 0;
+}
+
+.gtg-compare .compare-table tbody tr:hover td.gtg-col {
+    background: #e2f6eb;
+}
+
+.gtg-compare .brand-img {
+    width: 100px;
+    height: 88px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.gtg-compare th .brand-title {
+    font-size: var(--clamp12);
+    font-weight: var(--weight-light);
+    color: #666666;
+}
+
+.gtg-compare .Quality-title {
+    font-size: var(--clamp16);
+    font-weight: var(--weight-bold) !important;
+    color: #666666 !important;
+}
+
+.gtg-compare .Qualities-main-title {
+    font-size: var(--clamp16);
+    font-weight: var(--weight-bold);
+    color: #322D2D;
+}
+
+.gtg-compare .Qualities-main-title strong {
+    margin-top: -70px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+
+    .gtg-compare .compare-table th,
+    .gtg-compare .compare-table td {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .gtg-compare .brand-img {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* GTG compare end */
+
+/* footer start */
+footer {
+    background-color: var(--background);
+}
+
+footer .footer-logo-title {
+    font-size: var(--clamp42);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 0px;
+}
+
+footer .footer-links ul li a {
+    font-size: var(--clamp15);
+    font-weight: var(--weight-light);
+    font-family: "Oxanium", sans-serif;
+    color: var(--white);
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+footer .footer-links ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.4s ease;
+}
+
+footer .footer-links ul li a:hover::after {
+    width: 100%;
+}
+
+footer .footer-newsletter .newsletter-section {
+    background: linear-gradient(135deg, #0b3d2e, #063b2f);
+    padding: 70px 0;
+    color: #fff;
+}
+
+footer .footer-newsletter .newsletter-title {
+    font-size: var(--clamp18);
+    font-weight: var(--weight-bold);
+    color: #FEF3E4;
+}
+
+footer .footer-newsletter .newsletter-input {
+    font-size: var(--clamp16);
+    font-weight: var(--weight-light);
+    height: 48px;
+    border-radius: 0;
+    background: transparent;
+    border: 1px solid #ffffff;
+    color: #fff;
+    padding: 0 20px;
+}
+
+footer .footer-newsletter .newsletter-input::placeholder {
+    color: #ffffff;
+}
+
+footer .footer-newsletter .newsletter-input:focus {
+    box-shadow: none;
+    border-color: #f5f2f2;
+}
+
+footer .footer-newsletter .newsletter-btn {
+    font-size: var(--clamp16);
+    height: 48px;
+    background-color: #653B09;
+    color: #fff;
+    font-weight: var(--weight-bold);
+    border-radius: 0px;
+    border: none;
+    transition: 0.3s ease;
+    text-transform: capitalize;
+}
+
+footer .footer-newsletter .newsletter-btn:hover {
+    background-color: #8e5a1d;
+}
+
+footer .footer-newsletter .newsletter-text {
+    font-family: "Oxanium", sans-serif;
+    font-weight: var(--weight-light);
+    margin-top: 20px;
+    font-size: var(--clamp14);
+    color: #ffffff;
+}
+
+footer .footer-newsletter .newsletter-text a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* footer end */
+
+
+/* css animations */
+
+.fade-top {
+    transform: translateY(40px);
+}
+
+.fade-left {
+    transform: translateX(-40px);
+}
+
+.fade-right {
+    transform: translateX(40px);
+}
+
+.fade-top,
+.fade-left,
+.fade-right {
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+@keyframes fadeTop {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.delay-1 {
+    animation-delay: 0.3s;
+}
+.delay-2 {
+    animation-delay: 0.6s;
+}
+.delay-3 {
+    animation-delay: 0.9s;
+}
+.delay-4 {
+    animation-delay: 1.2s;
+}
